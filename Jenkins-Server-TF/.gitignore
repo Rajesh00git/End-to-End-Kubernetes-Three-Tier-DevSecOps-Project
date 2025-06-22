@@ -1,0 +1,30 @@
+# Ignore Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Ignore crash logs
+crash.log
+
+# Ignore Terraform plan output
+*.tfplan
+
+# Ignore Terraform directories
+.terraform/
+
+# Ignore override files (for local dev)
+*.tfvars
+*.tfvars.json
+
+# Ignore IDE files
+.vscode/
+.idea/
+.DS_Store
+
+# Ignore provider binaries
+*.exe
+*.zip
+
+# Ignore OS-specific files
+Thumbs.db
+ehthumbs.db
+desktop.ini
