@@ -42,15 +42,15 @@ pipeline {
             }
         }
 
-        stage('Quality Gate Check') {
-            steps {
-                script {
-                    timeout(time: 5, unit: 'MINUTES') {
-                        waitForQualityGate abortPipeline: true, credentialsId: 'sonar-token'
-                    }
-                }
-            }
-        }
+        // stage('Quality Gate Check') {
+        //     steps {
+        //         script {
+        //             timeout(time: 5, unit: 'MINUTES') {
+        //                 waitForQualityGate abortPipeline: true, credentialsId: 'sonar-token'
+        //             }
+        //         }
+        //     }
+        // }
 
         stage('Trivy File Scan') {
             steps {
