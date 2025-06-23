@@ -26,9 +26,11 @@ pipeline {
             steps {
                 dir('Application-Code/backend') {
                     withSonarQubeEnv('sonar-server') {
-                        sh ''' $SCANNER_HOME/bin/sonar-scanner \
-                        -Dsonar.projectName=three-tier-backend \
-                        -Dsonar.projectKey=three-tier-backend '''
+                        sh ''' sonar-scanner \
+                         -Dsonar.projectKey=backend \
+                         -Dsonar.sources=. \
+                         -Dsonar.host.url=http://54.90.165.231:9000 \
+                         -Dsonar.login=squ_e0e206f52511d2258a574d5ddb3477a9e7754389 '''
                     }
                 }
             }
@@ -88,7 +90,7 @@ pipeline {
         stage('Update Deployment file') {
             environment {
                 GIT_REPO_NAME = "End-to-End-Kubernetes-Three-Tier-DevSecOps-Project"
-                GIT_USER_NAME = "AmanPathak-DevOps"
+                GIT_USER_NAME = "Rajesh00git"
             }
             steps {
                 dir('Kubernetes-Manifests-file/Backend') {
