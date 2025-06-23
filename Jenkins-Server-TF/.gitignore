@@ -28,3 +28,13 @@ crash.log
 Thumbs.db
 ehthumbs.db
 desktop.ini
+
+# Ignore Terraform lock file (if you regenerate often)
+.terraform.lock.hcl
+
+# Ignore Jenkins workspace/temp files (if applicable)
+*.log
+*.tmp
+*.bak
+# Optional backend override
+backend.tf
