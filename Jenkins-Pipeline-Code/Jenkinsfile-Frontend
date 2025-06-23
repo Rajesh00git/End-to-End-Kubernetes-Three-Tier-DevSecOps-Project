@@ -36,6 +36,11 @@ pipeline {
         stage('Quality Check') {
             steps {
                 script {
+                    sonar-scanner \
+                     -Dsonar.projectKey=frontend \
+                     -Dsonar.sources=. \
+                     -Dsonar.host.url=http://54.90.165.231:9000 \
+                     -Dsonar.login=squ_e0e206f52511d2258a574d5ddb3477a9e7754389
                     waitForQualityGate abortPipeline: false, credentialsId: 'sonar-token' 
                 }
             }
